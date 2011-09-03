@@ -4,7 +4,7 @@ import Nesneler.*;
 public class Dagitici extends Thread {
 
     Gun[] gunler = new Gun[6];
-    Saat[] saatler = new Saat[9];
+    Saat[] saatler = new Saat[4];
     Hoca[] hocalar = new Hoca[18];
     Ders[] dersler = new Ders[25];
     Asistan[] asistanlar = new Asistan[5];
@@ -124,16 +124,15 @@ public class Dagitici extends Thread {
                     if (ders.getSaat().h > d.getSaat().h && ders.getSaat().h < d.getBitisSaati().h) { // Saat aralığı uyuşması
                         puan += 100;
                     }
-
                     if (d.getSaat().h > ders.getSaat().h && d.getSaat().h < ders.getBitisSaati().h) {
                         puan += 100;
                     }
+                    if (d.getSaat().h == ders.getBitisSaati().h) {
 
-                    if (d.getSaat().h == ders.getBitisSaati().h && d.getSaat().m < ders.getBitisSaati().m) {
                         puan += 100;
                     }
 
-                    if (d.getBitisSaati().h == ders.getSaat().h && d.getBitisSaati().m < ders.getSaat().m) {
+                    if (d.getBitisSaati().h == ders.getSaat().h) {
                         puan += 100;
                     }
 
